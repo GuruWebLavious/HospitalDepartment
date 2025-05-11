@@ -21,5 +21,17 @@ namespace HospitalDepartment
         {
 
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AboutUsForm aboutForm = new AboutUsForm(this);
+            this.Hide();
+            aboutForm.Show();
+        }
     }
 }
