@@ -12,9 +12,25 @@ namespace HospitalDepartment
 {
     public partial class PatientInDBForm : Form
     {
-        public PatientInDBForm()
+        private Form mainForm;
+        public PatientInDBForm(Form mainForm)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
+        }
+
+        private void patientInDBBackButton_Click(object sender, EventArgs e)
+        {
+            mainForm.Show();
+            this.Close();
+        }
+
+        private void noButton_Click(object sender, EventArgs e)
+        {
+            CreatePatientForm createPatientForm = new CreatePatientForm(this);
+            this.Hide();
+            createPatientForm.Show();
+
         }
     }
 }

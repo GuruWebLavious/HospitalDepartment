@@ -34,5 +34,12 @@ namespace HospitalDepartment
             this.Hide();
             aboutForm.Show();
         }
+
+        private void acceptThePatientButton_Click(object sender, EventArgs e)
+        {
+            PatientInDBForm patientInDBForm = new PatientInDBForm(this);
+            this.Hide();
+            patientInDBForm.Show();
+        }
     }
 }

@@ -58,6 +58,7 @@
             this.patientInDBBackButton.TabIndex = 20;
             this.patientInDBBackButton.Text = "Назад";
             this.patientInDBBackButton.UseVisualStyleBackColor = false;
+            this.patientInDBBackButton.Click += new System.EventHandler(this.patientInDBBackButton_Click);
             // 
             // yesButton
             // 
@@ -78,6 +79,7 @@
             this.noButton.TabIndex = 22;
             this.noButton.Text = "Нет";
             this.noButton.UseVisualStyleBackColor = true;
+            this.noButton.Click += new System.EventHandler(this.noButton_Click);
             // 
             // PatientInDBForm
             // 

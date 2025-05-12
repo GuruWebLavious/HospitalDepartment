@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.acceptThePatientButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -85,17 +85,18 @@
             this.toolStripMenuItem1.Text = "О нас";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // button1
+            // acceptThePatientButton
             // 
-            this.button1.BackColor = System.Drawing.Color.MintCream;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(70, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 61);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Принять пациента";
-            this.button1.UseVisualStyleBackColor = false;
+            this.acceptThePatientButton.BackColor = System.Drawing.Color.MintCream;
+            this.acceptThePatientButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.acceptThePatientButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.acceptThePatientButton.Location = new System.Drawing.Point(70, 158);
+            this.acceptThePatientButton.Name = "acceptThePatientButton";
+            this.acceptThePatientButton.Size = new System.Drawing.Size(255, 61);
+            this.acceptThePatientButton.TabIndex = 4;
+            this.acceptThePatientButton.Text = "Принять пациента";
+            this.acceptThePatientButton.UseVisualStyleBackColor = false;
+            this.acceptThePatientButton.Click += new System.EventHandler(this.acceptThePatientButton_Click);
             // 
             // button2
             // 
@@ -129,7 +130,7 @@
             this.ClientSize = new System.Drawing.Size(400, 469);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.acceptThePatientButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.menuStrip1);
@@ -151,7 +152,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button acceptThePatientButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
     }

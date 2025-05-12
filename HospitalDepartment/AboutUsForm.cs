@@ -24,5 +24,10 @@ namespace HospitalDepartment
             mainForm.Show();
             this.Close();
         }
+
+        private void AboutUsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
