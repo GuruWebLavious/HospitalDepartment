@@ -38,11 +38,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(113, 42);
+            this.label1.Location = new System.Drawing.Point(98, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 34);
+            this.label1.Size = new System.Drawing.Size(299, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "Пациент есть в БД?";
             // 

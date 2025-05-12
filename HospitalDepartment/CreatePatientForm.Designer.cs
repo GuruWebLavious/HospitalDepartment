@@ -66,6 +66,7 @@
             this.createPatientButton.TabIndex = 23;
             this.createPatientButton.Text = "Создать";
             this.createPatientButton.UseVisualStyleBackColor = true;
+            this.createPatientButton.Click += new System.EventHandler(this.createPatientButton_Click);
             // 
             // label2
             // 

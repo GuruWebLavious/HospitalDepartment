@@ -15,7 +15,7 @@ namespace HospitalDepartment
         public override int Age { get; set; }
         public string Diagnosis { get; set; }
         public string Status { get; set; }
-        public int doctor_person { get; set; }
+        public int doctor_patient { get; set; }
 
         public Patient(string surname, string name, string patronymic, string gender, int age, string diagnosis = "", string status = "", int id_doctor = 0)
         {
@@ -26,7 +26,7 @@ namespace HospitalDepartment
             Age = age;
             Diagnosis = diagnosis;
             Status = status;
-            doctor_person = id_doctor;
+            doctor_patient = id_doctor;
         }
     }
 }

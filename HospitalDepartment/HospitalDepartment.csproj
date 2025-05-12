@@ -52,6 +52,12 @@
     <Compile Include="AboutUsForm.Designer.cs">
       <DependentUpon>AboutUsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreatePatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePatientForm.Designer.cs">
+      <DependentUpon>CreatePatientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -66,6 +72,12 @@
     <Compile Include="PatientInDBForm.Designer.cs">
       <DependentUpon>PatientInDBForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PatientWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientWorkForm.Designer.cs">
+      <DependentUpon>PatientWorkForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,11 +90,17 @@
     <EmbeddedResource Include="AboutUsForm.resx">
       <DependentUpon>AboutUsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreatePatientForm.resx">
+      <DependentUpon>CreatePatientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientInDBForm.resx">
       <DependentUpon>PatientInDBForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientWorkForm.resx">
+      <DependentUpon>PatientWorkForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
