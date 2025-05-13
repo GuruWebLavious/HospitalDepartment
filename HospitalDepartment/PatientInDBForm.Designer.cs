@@ -69,6 +69,7 @@
             this.yesButton.TabIndex = 21;
             this.yesButton.Text = "Да";
             this.yesButton.UseVisualStyleBackColor = true;
+            this.yesButton.Click += new System.EventHandler(this.yesButton_Click);
             // 
             // noButton
             // 

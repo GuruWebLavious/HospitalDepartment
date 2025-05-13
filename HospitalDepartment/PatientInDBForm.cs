@@ -32,5 +32,12 @@ namespace HospitalDepartment
             createPatientForm.Show();
 
         }
+
+        private void yesButton_Click(object sender, EventArgs e)
+        {
+            FindPatientForm findPatientForm = new FindPatientForm(this);
+            this.Hide();
+            findPatientForm.Show();
+        }
     }
 }

@@ -47,7 +47,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.makeAnAppointment = new System.Windows.Forms.Button();
+            this.makeAnAppointmentButton = new System.Windows.Forms.Button();
             this.deletePatientButton = new System.Windows.Forms.Button();
             this.updatePatientButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -229,15 +229,15 @@
             this.textBox7.Size = new System.Drawing.Size(346, 30);
             this.textBox7.TabIndex = 41;
             // 
-            // makeAnAppointment
+            // makeAnAppointmentButton
             // 
-            this.makeAnAppointment.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.makeAnAppointment.Location = new System.Drawing.Point(248, 450);
-            this.makeAnAppointment.Name = "makeAnAppointment";
-            this.makeAnAppointment.Size = new System.Drawing.Size(217, 69);
-            this.makeAnAppointment.TabIndex = 42;
-            this.makeAnAppointment.Text = "Назначить приём";
-            this.makeAnAppointment.UseVisualStyleBackColor = true;
+            this.makeAnAppointmentButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.makeAnAppointmentButton.Location = new System.Drawing.Point(248, 450);
+            this.makeAnAppointmentButton.Name = "makeAnAppointmentButton";
+            this.makeAnAppointmentButton.Size = new System.Drawing.Size(217, 69);
+            this.makeAnAppointmentButton.TabIndex = 42;
+            this.makeAnAppointmentButton.Text = "Назначить приём";
+            this.makeAnAppointmentButton.UseVisualStyleBackColor = true;
             // 
             // deletePatientButton
             // 
@@ -267,7 +267,7 @@
             this.ClientSize = new System.Drawing.Size(727, 618);
             this.Controls.Add(this.updatePatientButton);
             this.Controls.Add(this.deletePatientButton);
-            this.Controls.Add(this.makeAnAppointment);
+            this.Controls.Add(this.makeAnAppointmentButton);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -314,7 +314,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button makeAnAppointment;
+        private System.Windows.Forms.Button makeAnAppointmentButton;
         private System.Windows.Forms.Button deletePatientButton;
         private System.Windows.Forms.Button updatePatientButton;
     }
