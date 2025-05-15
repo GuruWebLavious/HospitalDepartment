@@ -137,7 +137,13 @@ namespace HospitalDepartment
             int age = Convert.ToInt32(selectedRow.Cells["age"].Value);
             string diagnosis = selectedRow.Cells["diagnosis"].Value?.ToString();
             string status = selectedRow.Cells["treatment_status"].Value?.ToString();
-            int doctorId = Convert.ToInt32(selectedRow.Cells["doctor_id"].Value);
+            int doctorId = 0;
+            if (!string.IsNullOrEmpty(selectedRow.Cells["doctor_id"].Value?.ToString()) &&
+                !int.TryParse(selectedRow.Cells["doctor_id"].Value?.ToString(), out doctorId))
+            {
+                MessageBox.Show("Неверный формат ID врача.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Patient selectedPatient = new Patient(id, surname, name, patronymic, gender, age, diagnosis, status, doctorId);
 
