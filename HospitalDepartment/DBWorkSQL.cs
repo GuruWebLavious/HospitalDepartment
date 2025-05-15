@@ -123,13 +123,34 @@ namespace HospitalDepartment
                 {
                     NpgsqlCommand com = con.CreateCommand();
                     com.CommandText = $"DELETE FROM public.\"{table_view}\" WHERE \"{id_name}\" = @id";
-                    com.Parameters.AddWithValue("@id", id); 
+                    com.Parameters.AddWithValue("@id", id);
 
                     com.ExecuteNonQuery();
                 }
                 else throw new Exception("Ошибка открытия подключения!");
             }
             else throw new Exception("Ошибка подключения!");
+        }
+        public static void Update(string table_view, string id_name, int id, string[] columns, object[] values)
+        {
+            if (con == null || con.State != ConnectionState.Open)
+                throw new Exception("Соединение не установлено или закрыто");
+
+            using (var cmd = new NpgsqlCommand())
+            {
+                cmd.Connection = con;
+
+                string setClause = string.Join(", ", columns.Select((col, i) => $"\"{col}\" = @value{i}"));
+                cmd.CommandText = $"UPDATE public.\"{table_view}\" SET {setClause} WHERE \"{id_name}\" = @id";
+
+                for (int i = 0; i < values.Length; i++)
+                {
+                    cmd.Parameters.AddWithValue($"@value{i}", values[i] ?? DBNull.Value);
+                }
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+            }
         }
     }
 }

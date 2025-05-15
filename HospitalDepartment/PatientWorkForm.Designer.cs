@@ -271,6 +271,7 @@
             this.updatePatientButton.TabIndex = 44;
             this.updatePatientButton.Text = "Изменить данные";
             this.updatePatientButton.UseVisualStyleBackColor = true;
+            this.updatePatientButton.Click += new System.EventHandler(this.updatePatientButton_Click);
             // 
             // label10
             // 

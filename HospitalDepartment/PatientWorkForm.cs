@@ -68,5 +68,12 @@ namespace HospitalDepartment
                 }
             }
         }
+
+        private void updatePatientButton_Click(object sender, EventArgs e)
+        {
+            UpdatePatientForm updatePatientForm = new UpdatePatientForm(this, _patient);
+            updatePatientForm.Show();
+            this.Hide();
+        }
     }
 }
