@@ -8,6 +8,7 @@ namespace HospitalDepartment
 {
     public class Doctor : Person
     {
+        public override int Id { get; set; } 
         public override string Surname { get; set; }
         public override string Name { get; set; }
         public override string Patronymic { get; set; }

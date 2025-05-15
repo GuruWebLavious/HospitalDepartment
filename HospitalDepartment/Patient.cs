@@ -8,6 +8,7 @@ namespace HospitalDepartment
 {
     public class Patient : Person
     {
+        public override int Id { get; set; } 
         public override string Surname { get; set; }
         public override string Name { get; set; }
         public override string Patronymic { get; set; }
@@ -17,8 +18,10 @@ namespace HospitalDepartment
         public string Status { get; set; }
         public int doctor_patient { get; set; }
 
-        public Patient(string surname, string name, string patronymic, string gender, int age, string diagnosis = "", string status = "", int id_doctor = 0)
+        public Patient(int id, string surname, string name, string patronymic, string gender, int age, string diagnosis = "", string status = "", int id_doctor = 0)
         {
+
+            Id = id;
             Surname = surname;
             Name = name;
             Patronymic = patronymic;

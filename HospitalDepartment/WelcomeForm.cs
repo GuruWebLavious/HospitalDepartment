@@ -19,6 +19,7 @@ namespace HospitalDepartment
 
         private void welcomeButton_Click(object sender, EventArgs e)
         {
+            DBWorkSQL.OpenConnection();
             MainForm mainForm = new MainForm();
             this.Hide();
             mainForm.ShowDialog();

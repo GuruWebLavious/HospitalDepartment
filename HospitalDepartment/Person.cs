@@ -8,6 +8,7 @@ namespace HospitalDepartment
 {
     public abstract class Person
     {
+        public abstract int Id { get; set; }
         public abstract string Surname { get; set; }
         public abstract string Name { get; set; }
         public abstract string Patronymic { get; set; }
