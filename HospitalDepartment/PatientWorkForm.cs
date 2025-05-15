@@ -41,5 +41,32 @@ namespace HospitalDepartment
             this.Hide();
             mainForm.Show();
         }
+
+        private void deletePatientButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                $"Вы уверены, что хотите удалить пациента {_patient.Surname} {_patient.Name}?",
+                "Подтверждение удаления",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    DBWorkSQL.Delete("patient", "id", _patient.Id);
+
+                    MessageBox.Show("Пациент успешно удалён из базы данных.", "Удаление выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MainForm mainform = new MainForm();
+                    mainform.Show();
+                    this.Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при удалении пациента: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

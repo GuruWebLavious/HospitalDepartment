@@ -251,6 +251,7 @@
             // 
             // deletePatientButton
             // 
+            this.deletePatientButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deletePatientButton.Font = new System.Drawing.Font("Trebuchet MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.deletePatientButton.Location = new System.Drawing.Point(544, 536);
             this.deletePatientButton.Name = "deletePatientButton";
@@ -258,9 +259,11 @@
             this.deletePatientButton.TabIndex = 43;
             this.deletePatientButton.Text = "Удалить пациента";
             this.deletePatientButton.UseVisualStyleBackColor = true;
+            this.deletePatientButton.Click += new System.EventHandler(this.deletePatientButton_Click);
             // 
             // updatePatientButton
             // 
+            this.updatePatientButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updatePatientButton.Font = new System.Drawing.Font("Trebuchet MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.updatePatientButton.Location = new System.Drawing.Point(544, 229);
             this.updatePatientButton.Name = "updatePatientButton";
@@ -318,6 +321,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.patientWorkBackButton);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PatientWorkForm";
             this.Text = "PatientWorkForm";

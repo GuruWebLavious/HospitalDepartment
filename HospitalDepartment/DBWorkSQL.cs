@@ -115,5 +115,21 @@ namespace HospitalDepartment
             return Convert.ToInt32(result);
 
         }
+        public static void Delete(string table_view, string id_name, int id)
+        {
+            if (con != null)
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    NpgsqlCommand com = con.CreateCommand();
+                    com.CommandText = $"DELETE FROM public.\"{table_view}\" WHERE \"{id_name}\" = @id";
+                    com.Parameters.AddWithValue("@id", id); 
+
+                    com.ExecuteNonQuery();
+                }
+                else throw new Exception("Ошибка открытия подключения!");
+            }
+            else throw new Exception("Ошибка подключения!");
+        }
     }
 }
