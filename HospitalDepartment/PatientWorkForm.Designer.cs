@@ -64,7 +64,7 @@
             this.patientWorkBackButton.Name = "patientWorkBackButton";
             this.patientWorkBackButton.Size = new System.Drawing.Size(172, 59);
             this.patientWorkBackButton.TabIndex = 22;
-            this.patientWorkBackButton.Text = "Назад";
+            this.patientWorkBackButton.Text = "На главную";
             this.patientWorkBackButton.UseVisualStyleBackColor = false;
             this.patientWorkBackButton.Click += new System.EventHandler(this.patientWorkBackButton_Click);
             // 

@@ -33,7 +33,7 @@ namespace HospitalDepartment
             ageCreatePatientBox.Text = _patient.Age.ToString();
             diagnosisCreatePatientBox.Text = _patient.Diagnosis;
             treatmentStatusCreatePatientBox.Text = _patient.Status;
-            idDoctorCreatePatientBox.Text = _patient.doctor_patient.ToString();
+            idDoctorCreatePatientBox.Text = _patient.doctor_patient == 0 ? "" : Convert.ToString(_patient.doctor_patient);
         }
         private void patientWorkBackButton_Click(object sender, EventArgs e)
         {

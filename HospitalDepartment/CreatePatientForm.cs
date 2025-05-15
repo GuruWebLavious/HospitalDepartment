@@ -27,9 +27,24 @@ namespace HospitalDepartment
 
         private void createPatientButton_Click(object sender, EventArgs e)
         {
-            PatientWorkForm patientWorkForm = new PatientWorkForm(this);
-            this.Hide();
-            patientWorkForm.Show();
+            if (surnameCreatePatientBox.Text == "" || nameCreatePatientBox.Text == "" || patronymicCreatePatientBox.Text == "" || genderCreatePatientBox.Text == "" || ageCreatePatientBox.Text == "")
+            {
+                MessageBox.Show("Необходимо заполнить каждое поле", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                Patient newPatient = new Patient(surnameCreatePatientBox.Text.Trim(), nameCreatePatientBox.Text.Trim(), patronymicCreatePatientBox.Text.Trim(), genderCreatePatientBox.Text.Trim(), int.Parse(ageCreatePatientBox.Text.Trim()));
+
+                int newID = DBWorkSQL.Insert("patient", new string[] { "surname", "name", "patronymic", "gender", "age", "diagnosis", "treatment_status", "doctor_id" },
+                    new object[] { newPatient.Surname, newPatient.Name, newPatient.Patronymic, newPatient.Gender, newPatient.Age, newPatient.Diagnosis, newPatient.Status, null });
+
+                newPatient.Id = newID;
+
+                PatientWorkForm patientWorkForm = new PatientWorkForm(newPatient);
+                patientWorkForm.Show();
+                this.Hide();
+            }
         }
     }
 }

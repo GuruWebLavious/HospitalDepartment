@@ -31,5 +31,16 @@ namespace HospitalDepartment
             Status = status;
             doctor_patient = id_doctor;
         }
+        public Patient(string surname, string name, string patronymic, string gender, int age, string diagnosis = "", string status = "", int id_doctor = 0)
+        {
+            Surname = surname;
+            Name = name;
+            Patronymic = patronymic;
+            Gender = gender;
+            Age = age;
+            Diagnosis = diagnosis;
+            Status = status;
+            doctor_patient = id_doctor;
+        }
     }
 }

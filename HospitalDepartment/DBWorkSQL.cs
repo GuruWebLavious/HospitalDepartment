@@ -77,9 +77,9 @@ namespace HospitalDepartment
                     }
                     dt.Close();
                 }
-                else throw new Exception("Not Opened Connection!");
+                else throw new Exception("Ошибка открытия подключения!");
             }
-            else throw new Exception("Not Connected!");
+            else throw new Exception("Ошибка подключения!");
             return list;
         }
         public static int GetTotalRows(string table_view)
@@ -91,6 +91,29 @@ namespace HospitalDepartment
                 return Convert.ToInt32(com.ExecuteScalar());
             }
             throw new Exception("Not Connected!");
+        }
+        public static int Insert(string table_view, string[] columns, object[] values)
+        {
+            if (con == null || con.State != ConnectionState.Open)
+                throw new Exception("Соединение не установлено");
+
+
+            NpgsqlCommand com = con.CreateCommand();
+            com.Connection = con;
+
+            string columnsStr = string.Join(", ", columns);
+            string valuesStr = string.Join(", ", columns.Select((_, i) => "@" + i));
+
+            com.CommandText = $"INSERT INTO public.\"{table_view}\" ({columnsStr}) VALUES ({valuesStr}) RETURNING id";
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                com.Parameters.AddWithValue("@" + i, values[i] ?? DBNull.Value);
+            }
+
+            object result = com.ExecuteScalar();
+            return Convert.ToInt32(result);
+
         }
     }
 }
