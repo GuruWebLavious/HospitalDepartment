@@ -75,5 +75,12 @@ namespace HospitalDepartment
             updatePatientForm.Show();
             this.Hide();
         }
+
+        private void makeAnAppointmentButton_Click(object sender, EventArgs e)
+        {
+            MakeAnAppointmentForm makeAnAppointmentForm = new MakeAnAppointmentForm(this, _patient);
+            makeAnAppointmentForm.Show();
+            this.Hide();
+        }
     }
 }

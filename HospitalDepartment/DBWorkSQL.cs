@@ -152,5 +152,52 @@ namespace HospitalDepartment
                 int rowsAffected = cmd.ExecuteNonQuery();
             }
         }
+        public static Doctor GetDoctorById(int doctorId)
+        {
+            if (con == null || con.State != ConnectionState.Open)
+            {
+                MessageBox.Show("Соединение с БД не установлено.");
+                return null;
+            }
+            string query = "SELECT * FROM doctor WHERE id = @id";
+
+            using (var cmd = new NpgsqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@id", doctorId);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new Doctor(reader["surname"].ToString(), reader["name"].ToString(), reader["patronymic"].ToString(), reader["gender"].ToString(), Convert.ToInt32(reader["age"]))
+                        { Id = doctorId };
+                    }
+                }
+            }
+            return null;
+        }
+        public static bool AddMeeting(int patientId, int doctorId, DateTime start, DateTime end)
+        {
+
+            string query = @" INSERT INTO appointment (patient_id, doctor_id, start_time, end_time) VALUES (@patient_id, @doctor_id, @start_time, @end_time)";
+
+            using (var cmd = new NpgsqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@patient_id", patientId);
+                cmd.Parameters.AddWithValue("@doctor_id", doctorId);
+                cmd.Parameters.AddWithValue("@start_time", start); 
+                cmd.Parameters.AddWithValue("@end_time", end);
+
+                try
+                {
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при назначении встречи: " + ex.Message);
+                    return false;
+                }
+            }
+        }
     }
 }

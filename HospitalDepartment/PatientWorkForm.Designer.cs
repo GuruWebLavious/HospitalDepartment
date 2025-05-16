@@ -248,6 +248,7 @@
             this.makeAnAppointmentButton.TabIndex = 42;
             this.makeAnAppointmentButton.Text = "Назначить приём";
             this.makeAnAppointmentButton.UseVisualStyleBackColor = true;
+            this.makeAnAppointmentButton.Click += new System.EventHandler(this.makeAnAppointmentButton_Click);
             // 
             // deletePatientButton
             // 
