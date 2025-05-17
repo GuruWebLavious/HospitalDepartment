@@ -43,6 +43,10 @@
             // comboBoxExport
             // 
             this.comboBoxExport.FormattingEnabled = true;
+            this.comboBoxExport.Items.AddRange(new object[] {
+            "Пациенты",
+            "Врачи",
+            "Встречи"});
             this.comboBoxExport.Location = new System.Drawing.Point(75, 62);
             this.comboBoxExport.Name = "comboBoxExport";
             this.comboBoxExport.Size = new System.Drawing.Size(121, 21);
@@ -94,6 +98,7 @@
             this.ExportButton.TabIndex = 58;
             this.ExportButton.Text = "Экспорт";
             this.ExportButton.UseVisualStyleBackColor = true;
+            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
             // 
             // ExportBackButton
             // 
