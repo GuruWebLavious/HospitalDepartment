@@ -46,7 +46,8 @@ namespace HospitalDepartment
             {
                 if (comboBoxExport.Text == "")
                 {
-                    MessageBox.Show("Пожалуйста, выберите формат экспорта (Excel или HTML).", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Пожалуйста, выберите таблицу для экспорта.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
                 if (ExportExcelradioButton.Checked)
                 {

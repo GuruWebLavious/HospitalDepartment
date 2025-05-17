@@ -324,7 +324,7 @@ namespace HospitalDepartment
                     writer.WriteLine("</html>");
                 }
 
-                MessageBox.Show("Data exported to HTML successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Данные экспортированы в html успешны.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 System.Diagnostics.Process.Start(saveFileDialog.FileName);
             }
         }
