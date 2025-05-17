@@ -43,9 +43,10 @@
             this.exitButton.BackColor = System.Drawing.Color.PeachPuff;
             this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton.Location = new System.Drawing.Point(12, 400);
+            this.exitButton.Location = new System.Drawing.Point(9, 325);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(155, 57);
+            this.exitButton.Size = new System.Drawing.Size(116, 46);
             this.exitButton.TabIndex = 1;
             this.exitButton.Text = "Выйти";
             this.exitButton.UseVisualStyleBackColor = false;
@@ -56,9 +57,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(47, 62);
+            this.label1.Location = new System.Drawing.Point(35, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 68);
+            this.label1.Size = new System.Drawing.Size(226, 54);
             this.label1.TabIndex = 2;
             this.label1.Text = "Приёмное отделение\r\nгородской больницы";
             // 
@@ -70,7 +72,8 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(400, 38);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(300, 33);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,7 +83,7 @@
             this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(115, 0, 0, 0);
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(74, 34);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(63, 29);
             this.toolStripMenuItem1.Text = "О нас";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -89,9 +92,10 @@
             this.acceptThePatientButton.BackColor = System.Drawing.Color.MintCream;
             this.acceptThePatientButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.acceptThePatientButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.acceptThePatientButton.Location = new System.Drawing.Point(70, 167);
+            this.acceptThePatientButton.Location = new System.Drawing.Point(52, 136);
+            this.acceptThePatientButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.acceptThePatientButton.Name = "acceptThePatientButton";
-            this.acceptThePatientButton.Size = new System.Drawing.Size(267, 76);
+            this.acceptThePatientButton.Size = new System.Drawing.Size(200, 62);
             this.acceptThePatientButton.TabIndex = 4;
             this.acceptThePatientButton.Text = "Принять пациента";
             this.acceptThePatientButton.UseVisualStyleBackColor = false;
@@ -102,19 +106,21 @@
             this.exportDataButton.BackColor = System.Drawing.Color.MintCream;
             this.exportDataButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exportDataButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exportDataButton.Location = new System.Drawing.Point(70, 271);
+            this.exportDataButton.Location = new System.Drawing.Point(52, 220);
+            this.exportDataButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exportDataButton.Name = "exportDataButton";
-            this.exportDataButton.Size = new System.Drawing.Size(267, 76);
+            this.exportDataButton.Size = new System.Drawing.Size(200, 62);
             this.exportDataButton.TabIndex = 5;
             this.exportDataButton.Text = "Экспорт данных";
             this.exportDataButton.UseVisualStyleBackColor = false;
+            this.exportDataButton.Click += new System.EventHandler(this.exportDataButton_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(400, 469);
+            this.ClientSize = new System.Drawing.Size(300, 381);
             this.Controls.Add(this.exportDataButton);
             this.Controls.Add(this.acceptThePatientButton);
             this.Controls.Add(this.label1);
@@ -122,6 +128,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.Form1_Load);

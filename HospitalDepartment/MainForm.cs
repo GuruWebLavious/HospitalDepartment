@@ -41,5 +41,12 @@ namespace HospitalDepartment
             this.Hide();
             patientInDBForm.Show();
         }
+
+        private void exportDataButton_Click(object sender, EventArgs e)
+        {
+            ExportDataForm exportDataForm = new ExportDataForm(this);
+            this.Hide();
+            exportDataForm.Show();
+        }
     }
 }

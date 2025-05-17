@@ -109,6 +109,12 @@
     </Compile>
     <Compile Include="DBWorkSQL.cs" />
     <Compile Include="Doctor.cs" />
+    <Compile Include="ExportDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportDataForm.Designer.cs">
+      <DependentUpon>ExportDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FindPatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreatePatientForm.resx">
       <DependentUpon>CreatePatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportDataForm.resx">
+      <DependentUpon>ExportDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindPatientForm.resx">
       <DependentUpon>FindPatientForm.cs</DependentUpon>
