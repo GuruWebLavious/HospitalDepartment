@@ -33,5 +33,11 @@ namespace HospitalDepartment
         {
 
         }
+
+        private void ExportBackButton_Click(object sender, EventArgs e)
+        {
+            mainForm.Show();
+            this.Close();
+        }
     }
 }

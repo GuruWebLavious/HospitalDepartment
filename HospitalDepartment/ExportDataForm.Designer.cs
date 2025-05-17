@@ -33,10 +33,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.ExportButton = new System.Windows.Forms.Button();
             this.ExportBackButton = new System.Windows.Forms.Button();
+            this.ExportExcelradioButton = new System.Windows.Forms.RadioButton();
+            this.ExportHTMLradioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,8 +72,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.ExportHTMLradioButton);
+            this.groupBox1.Controls.Add(this.ExportExcelradioButton);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox1.Location = new System.Drawing.Point(39, 99);
@@ -82,26 +82,6 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выберите формат";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(7, 27);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(64, 23);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Excel";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(7, 54);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(69, 23);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "HTML";
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // ExportButton
             // 
@@ -126,6 +106,29 @@
             this.ExportBackButton.TabIndex = 57;
             this.ExportBackButton.Text = "Назад";
             this.ExportBackButton.UseVisualStyleBackColor = false;
+            this.ExportBackButton.Click += new System.EventHandler(this.ExportBackButton_Click);
+            // 
+            // ExportExcelradioButton
+            // 
+            this.ExportExcelradioButton.AutoSize = true;
+            this.ExportExcelradioButton.Location = new System.Drawing.Point(6, 26);
+            this.ExportExcelradioButton.Name = "ExportExcelradioButton";
+            this.ExportExcelradioButton.Size = new System.Drawing.Size(63, 23);
+            this.ExportExcelradioButton.TabIndex = 0;
+            this.ExportExcelradioButton.TabStop = true;
+            this.ExportExcelradioButton.Text = "Excel";
+            this.ExportExcelradioButton.UseVisualStyleBackColor = true;
+            // 
+            // ExportHTMLradioButton
+            // 
+            this.ExportHTMLradioButton.AutoSize = true;
+            this.ExportHTMLradioButton.Location = new System.Drawing.Point(7, 56);
+            this.ExportHTMLradioButton.Name = "ExportHTMLradioButton";
+            this.ExportHTMLradioButton.Size = new System.Drawing.Size(68, 23);
+            this.ExportHTMLradioButton.TabIndex = 1;
+            this.ExportHTMLradioButton.TabStop = true;
+            this.ExportHTMLradioButton.Text = "HTML";
+            this.ExportHTMLradioButton.UseVisualStyleBackColor = true;
             // 
             // ExportDataForm
             // 
@@ -156,9 +159,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button ExportButton;
         private System.Windows.Forms.Button ExportBackButton;
+        private System.Windows.Forms.RadioButton ExportExcelradioButton;
+        private System.Windows.Forms.RadioButton ExportHTMLradioButton;
     }
 }

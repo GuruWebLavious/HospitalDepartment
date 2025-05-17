@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -197,6 +198,134 @@ namespace HospitalDepartment
                     MessageBox.Show("Ошибка при назначении встречи: " + ex.Message);
                     return false;
                 }
+            }
+        }
+        public static List<List<string>> Select_all(string table_view)
+        {
+            List<List<string>> list = new List<List<string>>();
+            if (con != null)
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    NpgsqlCommand com = con.CreateCommand();
+                    com.CommandText = "Select * from public." + table_view;
+                    NpgsqlDataReader dt = com.ExecuteReader(CommandBehavior.Default);
+                    bool add_names = false;
+                    while (dt.Read())
+                    {
+                        try
+                        {
+                            if (!add_names)
+                            {
+                                List<string> list_names = new List<string>();
+                                for (int i = 0; i < dt.FieldCount; i++)
+                                {
+                                    list_names.Add(dt.GetName(i));
+                                }
+                                list.Add(list_names);
+                                add_names = true;
+                            }
+                            List<string> inside_list = new List<string>();
+                            for (int i = 0; i < dt.FieldCount; i++)
+                            {
+                                inside_list.Add(dt.GetValue(i).ToString());
+                            }
+                            list.Add(inside_list);
+                        }
+                        catch (Exception ex) { MessageBox.Show(ex.Message); }
+                    }
+                    dt.Close();
+                }
+                else throw new Exception("Не удалось установить соединение!");
+            }
+            else throw new Exception("Не подключено!");
+            return list;
+        }
+        public static void ExportToExcel(string name)
+        {
+            List<List<string>> table = DBWorkSQL.Select_all(name);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                FileName = name,
+                Filter = "Excel Files (*.xls)|*.xls",
+                DefaultExt = "xls"
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                using (StreamWriter writer = new StreamWriter(stream, Encoding.Unicode))
+                {
+                    foreach (string column in table[0])
+                    {
+                        writer.Write(column + "\t");
+                    }
+                    writer.WriteLine();
+
+                    for (int i = 1; i < table.Count; i++)
+                    {
+                        foreach (string value in table[i])
+                        {
+                            writer.Write(value + "\t");
+                        }
+                        writer.WriteLine();
+                    }
+                }
+
+                MessageBox.Show("Данные экспортированы в excel успешны.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Diagnostics.Process.Start(saveFileDialog.FileName);
+            }
+        }
+        public static void ExportToHTML(string name)
+        {
+            List<List<string>> table = DBWorkSQL.Select_all(name);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                FileName = name,
+                Filter = "HTML Files (*.html)|*.html",
+                DefaultExt = "html"
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                using (StreamWriter writer = new StreamWriter(stream, Encoding.UTF8))
+                {
+                    writer.WriteLine("<html>");
+                    writer.WriteLine("<head>");
+                    writer.WriteLine("<meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\">");
+                    writer.WriteLine("<title>" + name + "</title>");
+                    writer.WriteLine("</head>");
+                    writer.WriteLine("<body>");
+                    writer.WriteLine("<table border=\"1\" align=\"center\">");
+
+                    // Заголовки таблицы
+                    writer.WriteLine("<tr>");
+                    foreach (string column in table[0])
+                    {
+                        writer.WriteLine("<th>" + column + "</th>");
+                    }
+                    writer.WriteLine("</tr>");
+                    // Строки данных
+                    for (int i = 1; i < table.Count; i++)
+                    {
+                        writer.WriteLine("<tr>");
+                        foreach (string value in table[i])
+                        {
+                            writer.WriteLine("<td>" + value + "</td>");
+                        }
+                        writer.WriteLine("</tr>");
+                    }
+
+                    writer.WriteLine("</table>");
+                    writer.WriteLine("</body>");
+                    writer.WriteLine("</html>");
+                }
+
+                MessageBox.Show("Data exported to HTML successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Diagnostics.Process.Start(saveFileDialog.FileName);
             }
         }
     }
